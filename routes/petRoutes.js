@@ -10,7 +10,7 @@ router.get('/pets', (req, res) => {
 
 // GET one pet
 router.get('/pets/:id', (req, res) => {
-  Pet.findOne({ id: req.params.id })
+  Pet.findOne({ where: { id: req.params.id } })
     .then(pet => { res.json(pet) })
     .catch(err => console.log(err))
 })
